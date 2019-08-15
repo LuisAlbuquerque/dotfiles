@@ -1,0 +1,1 @@
+Plug 'siiky/molokai'
