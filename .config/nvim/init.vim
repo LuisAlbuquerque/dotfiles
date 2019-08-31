@@ -97,6 +97,7 @@ se statusline+=%(%l:%c\ \|\ %L\ \|\ %) " #L:#C | #TL |
 nnoremap <LEADER>M maggVG=`a_zz
 nnoremap <LEADER>m ma][[[V%=`a_zz
 
+
 "nnoremap <LEADER>W :up<CR>
 "nnoremap <LEADER>X :x<CR>
 
@@ -149,7 +150,9 @@ nnoremap <LEADER>m ma][[[V%=`a_zz
 "nnoremap <C-S> :%s/\V<C-R><C-W>//cg<LEFT><LEFT><LEFT>
 "vnoremap <C-S> "yy:%s/\V<C-R>"//cg<LEFT><LEFT><LEFT>
 
+"nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 " quickfix navigation
+nnoremap <silent> <F2> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :cwindow<CR>
 nnoremap <silent> <F5> :make<CR>
 nnoremap <silent> <F6> :make clean<CR>
@@ -250,9 +253,12 @@ let g:plug_dir='~/.vim/plugged'
 call plug#begin(g:plug_dir)
 
 "Plug 'valloric/youcompleteme'
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/syntastic'
 "set laststatus=2
 set noshowmode
 let g:lightline = {
@@ -265,6 +271,8 @@ let g:lightline = {
 "source ~/.vim/pconfigs/editorconfig.vim
 source ~/.config/nvim/pconfigs/molokai.vim
 source ~/.config/nvim/pconfigs/dart.vim
+"source ~/.config/nvim/pconfigs/typescript.vim
+"source ~/.vim/pack/typescript-vim
 source ~/.config/nvim/pconfigs/sneak.vim
 source ~/.config/nvim/pconfigs/surround.vim
 "source ~/.vim/pconfigs/vimproc.vim
@@ -293,7 +301,7 @@ call plug#end()
 se grepprg=/usr/local/bin/grep
 
 " syntax at the end because of plugins messing with it
-set background=light
+set background=dark
 colorscheme PaperColor
 "colorscheme spring-night
 "colorscheme tone
